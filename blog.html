@@ -3,52 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codev - Lightweight Python Code Editor</title>
+    <title>Codev Development Blog</title>
     <style>
+        :root {
+            --bg-light: #ffffff;
+            --text-light: #333333;
+            --bg-dark: #1e1e2e;
+            --text-dark: #f0f0f0;
+            --accent: #61dafb;
+        }
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #1e1e2e;
-            color: #ffffff;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            background-color: var(--bg-light);
+            color: var(--text-light);
+            padding: 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: var(--bg-dark);
+                color: var(--text-dark);
+            }
         }
         h1 {
-            color: #61dafb;
+            text-align: center;
+            color: var(--accent);
         }
-        p {
-            max-width: 500px;
+        .post {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.03);
         }
-        .buttons {
-            margin-top: 20px;
+        @media (prefers-color-scheme: dark) {
+            .post {
+                background: rgba(255, 255, 255, 0.05);
+            }
         }
-        a.button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 5px;
-            background: #61dafb;
-            color: #1e1e2e;
+        .post h2 {
+            margin-top: 0;
+        }
+        .date {
+            font-size: 0.9em;
+            color: gray;
+        }
+        a {
+            color: var(--accent);
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
         }
-        a.button:hover {
-            background: #ffffff;
-            color: #1e1e2e;
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>Codev</h1>
-    <p>A lightweight, modern Python-based code editor with multi-tab support, file explorer, and real-time execution.
-       Now featuring Light/Dark mode and 2× performance improvement!</p>
-    <div class="buttons">
-        <a href="https://github.com/yucchannel/codev" class="button">GitHub Repository</a>
-        <a href="https://github.com/yucchannel/codev/releases/latest" class="button">Download Latest</a>
+    <h1>Codev Development Blog</h1>
+
+    <div class="post">
+        <h2>Version 1.1 Released – Faster & Lighter</h2>
+        <p class="date">2025-07-20</p>
+        <p>We’ve released Codev v1.1! It’s now 2× lighter and introduces auto Light/Dark mode switching. 
+           The update also brings improved threading for smoother performance.</p>
     </div>
+
+    <div class="post">
+        <h2>Initial Release – Codev v1.0</h2>
+        <p class="date">2025-07-18</p>
+        <p>Our first public release of Codev is here! Featuring a built-in file explorer, multi-tab editor, 
+           and live Python execution.</p>
+    </div>
+
+    <p style="text-align:center;">
+        <a href="index.html">← Back to Home</a>
+    </p>
 </body>
 </html>
