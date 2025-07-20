@@ -51,7 +51,7 @@ python codev.py
 
 ## Screenshots
 
-<img width="1920" height="989" alt="Codev - 1 0 0 2025_07_20 14_46_02" src="https://github.com/user-attachments/assets/c5477ae9-53fe-49a2-8d46-2b2efe61110f" />
+<img width="1920" height="989" alt="Codev - 1 0 0 2025_07_20 14_48_53" src="https://github.com/user-attachments/assets/ac5aef9d-84e3-4f64-b873-112aa23cdecd" />
 
 ---
 
