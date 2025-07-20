@@ -61,14 +61,3 @@ python codev.py
 * **OS:** Windows / macOS / Linux
 
 ---
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-```
-
----
-
-Would you like me to **add an actual Codev screenshot** (a generated one that matches your UI) so you can immediately put it in this README?
-```
