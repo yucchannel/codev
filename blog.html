@@ -3,194 +3,157 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Codev 開発ブログ</title>
+<title>Codev Development Blog</title>
 <style>
-  /* メニューバー */
-  nav.menu-bar {
+  /* 追加：固定メニューバー */
+  header {
     position: fixed;
     top: 0; left: 0; right: 0;
     height: 60px;
-    background: rgba(58, 42, 120, 0.85);
+    background: rgba(30, 30, 46, 0.85);
+    box-shadow: 0 0 10px #0008;
     display: flex;
     align-items: center;
     padding: 0 40px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.7);
+    box-sizing: border-box;
     z-index: 1000;
     user-select: none;
   }
-  nav.menu-bar a {
-    color: #c3d6ff;
+  header h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #add8e6;
+    user-select: none;
+  }
+  nav {
+    margin-left: auto;
+  }
+  nav a {
+    color: #add8e6;
     text-decoration: none;
+    margin-left: 24px;
     font-weight: 600;
-    font-size: 1.1rem;
-    margin-right: 32px;
+    font-size: 1rem;
     padding: 8px 14px;
     border-radius: 8px;
     transition: background 0.3s ease, color 0.3s ease;
-    box-shadow: 0 0 0 transparent;
   }
-  nav.menu-bar a:last-child {
-    margin-right: 0;
-  }
-  nav.menu-bar a:hover,
-  nav.menu-bar a:focus {
-    background: #b0aaffcc;
+  nav a:hover,
+  nav a:focus {
+    background: #61dafb44;
     color: #1e1e2e;
-    box-shadow: 0 0 8px #d4d9ff;
     outline: none;
   }
 
+  /* body・背景 */
   body {
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
+    background: #1e1e2e url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
     background-size: cover;
     color: #eee;
-    position: relative;
     min-height: 100vh;
-    padding-top: 80px; /* メニューバー用余白 */
-  }
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(106, 90, 205, 0.4);
-    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px 20px; /* 上にメニューバー分の余白 */
+    box-sizing: border-box;
   }
 
   main {
-    max-width: 900px;
-    margin: 0 auto 60px;
-    background: rgba(30, 30, 46, 0.85);
+    flex: 1;
+    max-width: 800px;
+    background: rgba(30, 30, 46, 0.8);
+    padding: 25px 30px;
     border-radius: 12px;
-    padding: 30px 30px 40px;
-    box-shadow: 0 0 20px #000c;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    overflow-y: auto;
   }
-
-  h1 {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #add8e6;
-    text-shadow: 0 0 15px #b0c4de;
-  }
-
-  article.post {
-    margin-bottom: 36px;
-  }
-  article.post h2 {
-    color: #9acdff;
-    border-bottom: 2px solid #61dafb;
-    padding-bottom: 6px;
-    margin-bottom: 14px;
-  }
-  article.post time {
-    font-size: 0.9rem;
-    color: #a2aaffcc;
-    user-select: none;
-  }
-  article.post p {
-    line-height: 1.5;
-    font-size: 1.15rem;
-    margin-top: 8px;
-    white-space: pre-wrap;
-  }
-
-  a.back-home {
-    display: block;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 15px 0;
-    font-weight: 700;
+  main h2 {
     color: #61dafb;
-    text-decoration: none;
-    border: 2px solid #61dafb;
-    border-radius: 8px;
-    transition: background 0.3s ease, color 0.3s ease;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  article {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 15px;
+  }
+  article h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    color: #add8e6;
+  }
+  article time {
+    font-size: 0.85rem;
+    color: #aaa;
+  }
+  article p {
+    line-height: 1.5;
+    font-size: 1rem;
+    margin: 10px 0 0 0;
+  }
+  footer {
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #bbb;
     user-select: none;
-  }
-  a.back-home:hover {
-    background: #61dafb;
-    color: #1e1e2e;
-  }
-
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 2.4rem;
-    }
-    article.post h2 {
-      font-size: 1.5rem;
-    }
-    article.post p {
-      font-size: 1rem;
-    }
+    text-align: center;
   }
 </style>
 </head>
 <body>
-  <nav class="menu-bar" role="navigation" aria-label="Main menu">
-    <a href="index.html" tabindex="1">ホーム</a>
+<header>
+  <h1>Codev</h1>
+  <nav>
+    <a href="index.html" rel="noopener" tabindex="1">ホーム</a>
     <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener" tabindex="2">GitHub</a>
     <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener" tabindex="3">最新版DL</a>
     <a href="manual.html" tabindex="4">マニュアル</a>
     <a href="blog.html" tabindex="5">開発ブログ</a>
   </nav>
+</header>
+<main>
+  <h2>開発ブログ</h2>
 
-  <main>
-    <h1>開発ブログ</h1>
+  <article>
+    <h3>Version 1.0.4 - Final</h3>
+    <time>2025-07-21</time>
+    <p>バグ修正とUI改善。ファイルツリーの同期安定化、オートコンプリートの強化。</p>
+  </article>
 
-    <article class="post">
-      <h2>1.0.4-pre#20250721 - 新しい背景画像対応、ドキュメント更新</h2>
-      <time datetime="2025-07-21">2025-07-21</time>
-      <p>
-        最新リリースで背景画像を刷新し、マニュアルページを整備しました。<br>
-        今後のアップデートに向けた基盤を強化しています。
-      </p>
-    </article>
+  <article>
+    <h3>Version 1.0.4 - Beta</h3>
+    <time>2025-07-15</time>
+    <p>リアルタイム共同編集機能追加、通信の安定化を図る。バグ多めなので注意。</p>
+  </article>
 
-    <article class="post">
-      <h2>1.0.3-final - UI改善と機能追加</h2>
-      <time datetime="2025-07-10">2025-07-10</time>
-      <p>
-        ユーザーインターフェースを大幅に改善し、マルチタブ機能やファイルエクスプローラーを強化しました。<br>
-        コード補完機能も安定動作に。
-      </p>
-    </article>
+  <article>
+    <h3>Version 1.0.4 - Pre #1</h3>
+    <time>2025-07-10</time>
+    <p>ファイル操作の多言語対応。コードエディターの拡張性アップ。バージョニング方式を拡張。</p>
+  </article>
 
-    <article class="post">
-      <h2>1.0.2-patch#1 - 小規模修正とパフォーマンス向上</h2>
-      <time datetime="2025-07-03">2025-07-03</time>
-      <p>
-        バグ修正を中心に、動作の軽量化と安定性を改善しました。
-      </p>
-    </article>
+  <article>
+    <h3>Version 1.0.3 - Final</h3>
+    <time>2025-07-05</time>
+    <p>UIの大幅改良。エラーログとコンソール分割表示を導入。</p>
+  </article>
 
-    <article class="post">
-      <h2>1.0.1-final - バグ修正と安定化</h2>
-      <time datetime="2025-06-25">2025-06-25</time>
-      <p>
-        複数の報告されたバグを修正し、動作の安定性を向上させました。
-      </p>
-    </article>
+  <article>
+    <h3>Version 1.0.2 - Beta</h3>
+    <time>2025-06-28</time>
+    <p>拡張機能の動的ロード対応。シェルコマンド実行機能追加。</p>
+  </article>
 
-    <article class="post">
-      <h2>1.0.0-beta - 新機能追加と動作確認</h2>
-      <time datetime="2025-06-10">2025-06-10</time>
-      <p>
-        初期のベータ版リリース。基本機能の追加と動作テストを行いました。
-      </p>
-    </article>
+  <article>
+    <h3>Version 1.0.1 - Pre #1</h3>
+    <time>2025-06-20</time>
+    <p>最初のパッチ。基本的なファイル操作機能の追加とUI構築。</p>
+  </article>
 
-    <article class="post">
-      <h2>1.0.0-pre - 最初のプレリリース</h2>
-      <time datetime="2025-06-01">2025-06-01</time>
-      <p>
-        Codevプロジェクト開始、基本的なエディター機能を実装しました。
-      </p>
-    </article>
-
-    <a href="index.html" class="back-home">ホームに戻る</a>
-  </main>
+</main>
+<footer>© NovaWorks</footer>
 </body>
 </html>
