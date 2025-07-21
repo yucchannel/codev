@@ -4,83 +4,46 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Codev リアルタイム掲示板フォーム</title>
-  <header>
-  <nav class="menu-bar">
-    <div class="logo">Codev</div>
-    <div class="menu-items">
-      <a href="index.html">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="manual.html">Manual</a>
-      <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener">Download</a>
-          <a href="forum">forum</a>
-
-    </div>
-  </nav>
-</header>
-
 <style>
+  /* メニューバー */
   .menu-bar {
-  background-color: #1e1e2e;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 24px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.6);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-sizing: border-box; /* ←追加: 横幅にpadding含める */
-}
-
-.logo {
-  color: #61dafb;
-  font-weight: bold;
-  font-size: 1.5rem;
-  user-select: none;
-  flex-shrink: 0; /* ロゴが縮まらない */
-}
-
-.menu-items {
-  display: flex;       /* 横並びに */
-  gap: 20px;           /* リンク間の間隔 */
-  flex-grow: 1;        /* 右側メニューが親幅いっぱいに広がる */
-  justify-content: flex-end; /* 右寄せ */
-  box-sizing: border-box;
-}
-
-.menu-items a {
-  color: #add8e6;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  white-space: nowrap; /* 改行されないように */
-}
-
-.menu-items a:hover {
-  color: #ffffff;
-}
-
+    background-color: #1e1e2e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
   .logo {
     color: #61dafb;
     font-weight: bold;
     font-size: 1.5rem;
     user-select: none;
+    flex-shrink: 0;
+  }
+  .menu-items {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+    justify-content: flex-end;
+    box-sizing: border-box;
   }
   .menu-items a {
     color: #add8e6;
     text-decoration: none;
-    margin-left: 20px;
     font-weight: 600;
     font-size: 1rem;
+    white-space: nowrap;
   }
   .menu-items a:hover {
     color: #ffffff;
   }
-</style>
 
-<style>
   /* リセットとボックスサイズ */
   * {
     box-sizing: border-box;
@@ -95,7 +58,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 20px;
+    padding: 80px 20px 40px; /* 上はメニューバー分の余裕を */
     position: relative;
   }
   /* 背景の暗いオーバーレイ */
@@ -225,6 +188,20 @@
 </head>
 <body>
 
+<header>
+  <nav class="menu-bar">
+    <div class="logo">Codev</div>
+    <div class="menu-items">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="manual.html">Manual</a>
+      <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener">Download</a>
+      <a href="forum.html">Forum</a>
+    </div>
+  </nav>
+</header>
+
 <h1>Codev 掲示板フォーム</h1>
 
 <form id="messageForm" autocomplete="off" spellcheck="false">
@@ -244,7 +221,7 @@
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
 <script>
-  // Firebase設定（ここを自分のプロジェクトに書き換え）
+  // Firebase設定（ここを自分のFirebaseプロジェクトの設定に書き換えてください）
   const firebaseConfig = {
     apiKey: "AIzaSyxxxxxx-xxxxxx_xxxxxxx",
     authDomain: "ppc123-530d8.firebaseapp.com",
@@ -286,6 +263,7 @@
     messagesDiv.innerHTML = '';
 
     if (data) {
+      // タイムスタンプ降順で並べ替え
       const sorted = Object.entries(data).sort((a, b) => b[1].timestamp - a[1].timestamp);
       sorted.forEach(([key, msg]) => {
         const div = document.createElement('div');
@@ -303,6 +281,7 @@
     }
   });
 
+  // HTMLエスケープ関数
   function escapeHtml(text) {
     return text.replace(/&/g, "&amp;")
                .replace(/</g, "&lt;")
