@@ -1,139 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Codev</title>
+<title>Codev - Lightweight Python Code Editor</title>
 <style>
-  /* 背景画像＋紫オーバーレイ */
   body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    color: #fff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #1e1e2e url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #eee;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 20px;
   }
-
-  /* 背景画像用の固定div */
-  .background-image {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: url('https://yucchannel.github.io/codev/codev.png') center center / cover no-repeat;
-    opacity: 0.15; /* 透明度調整 */
-    z-index: -2;
-  }
-
-  /* 紫色オーバーレイ */
-  .overlay {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #6a5acd;
-    opacity: 0.8;
-    z-index: -1;
-  }
-
-  /* メニューバー */
-  nav {
-    background-color: rgba(0,0,0,0.5);
-    padding: 12px 20px;
+  header {
+    width: 100%;
+    background: rgba(106, 90, 205, 0.8); /* 半透明紫 */
+    padding: 10px 20px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     display: flex;
-    gap: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 {
+    margin: 0;
     font-weight: bold;
+    font-size: 1.8rem;
+    color: #add8e6;
+    user-select: none;
   }
   nav a {
-    color: #61dafb;
+    color: #add8e6;
     text-decoration: none;
+    margin-left: 15px;
+    font-weight: 600;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    user-select: none;
   }
   nav a:hover {
     color: #ffffff;
   }
-
-  /* メインコンテンツ */
   main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex: 1;
+    max-width: 700px;
     text-align: center;
-    padding: 20px;
+    margin-top: 80px;
+    background: rgba(30, 30, 46, 0.8);
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
   }
-
-  main h1 {
-    font-size: 3rem;
+  main h2 {
     color: #61dafb;
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
   }
   main p {
-    max-width: 500px;
-    margin: 0 auto;
-    font-size: 1.2rem;
+    margin: 0 0 20px 0;
     line-height: 1.5;
+    font-size: 1.1rem;
   }
-
-  /* ボタン群 */
   .buttons {
     margin-top: 20px;
   }
   a.button {
     display: inline-block;
-    padding: 10px 22px;
-    margin: 6px;
+    padding: 10px 24px;
+    margin: 6px 8px;
     background: #61dafb;
     color: #1e1e2e;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    user-select: none;
+    transition: background 0.3s ease, color 0.3s ease;
   }
   a.button:hover {
     background: #ffffff;
     color: #1e1e2e;
   }
-
-  /* フッター */
   footer {
-    padding: 12px;
-    font-size: 0.8rem;
+    margin-top: 40px;
+    font-size: 0.85rem;
     color: #bbb;
-    text-align: center;
+    user-select: none;
   }
-
 </style>
 </head>
 <body>
-
-  <div class="background-image"></div>
-  <div class="overlay"></div>
-
-  <nav>
-    <a href="https://github.com/yucchannel/codev">GitHub</a>
-    <a href="https://github.com/yucchannel/codev/releases/latest">Download</a>
-    <a href="https://yucchannel.github.io/codev/blog.html">Blog</a>
-    <a href="#features">Features</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <main>
+  <header>
     <h1>Codev</h1>
-    <p>
-      A lightweight, modern Python-based code editor with multi-tab support, file explorer, and real-time execution.
-      Now featuring Light/Dark mode and 2× performance improvement!
-    </p>
+    <nav>
+      <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub Repository</a>
+      <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener">Download Latest</a>
+      <a href="https://yucchannel.github.io/codev/blog.html" target="_blank" rel="noopener">Blog</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Lightweight Python Code Editor</h2>
+    <p>Codevは軽量かつモダンなPythonベースのコードエディターで、マルチタブ対応、ファイルエクスプローラー、リアルタイム実行機能を備えています。<br>ライト／ダークモード切替や2倍のパフォーマンス向上も実現しました！</p>
     <div class="buttons">
-      <a href="https://github.com/yucchannel/codev" class="button">GitHub Repository</a>
-      <a href="https://github.com/yucchannel/codev/releases/latest" class="button">Download Latest</a>
-      <a href="https://yucchannel.github.io/codev/blog.html" class="button">Blog</a>
+      <a href="https://github.com/yucchannel/codev" class="button" target="_blank" rel="noopener">GitHub Repository</a>
+      <a href="https://github.com/yucchannel/codev/releases/latest" class="button" target="_blank" rel="noopener">Download Latest</a>
+      <a href="https://yucchannel.github.io/codev/blog.html" class="button" target="_blank" rel="noopener">Blog</a>
     </div>
   </main>
-
-  <footer>
-    © NovaWorks
-  </footer>
-
+  <footer>© NovaWorks</footer>
 </body>
 </html>
