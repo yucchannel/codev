@@ -1,56 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codev - Lightweight Python Code Editor</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #1e1e2e;
-            color: #ffffff;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        h1 {
-            color: #61dafb;
-        }
-        p {
-            max-width: 500px;
-        }
-        .buttons {
-            margin-top: 20px;
-        }
-        a.button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 5px;
-            background: #61dafb;
-            color: #1e1e2e;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        a.button:hover {
-            background: #ffffff;
-            color: #1e1e2e;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Codev</title>
+<style>
+  /* 背景画像＋紫オーバーレイ */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 背景画像用の固定div */
+  .background-image {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://yucchannel.github.io/codev/image.png') center center / cover no-repeat;
+    opacity: 0.15; /* 透明度調整 */
+    z-index: -2;
+  }
+
+  /* 紫色オーバーレイ */
+  .overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #6a5acd;
+    opacity: 0.8;
+    z-index: -1;
+  }
+
+  /* メニューバー */
+  nav {
+    background-color: rgba(0,0,0,0.5);
+    padding: 12px 20px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    font-weight: bold;
+  }
+  nav a {
+    color: #61dafb;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #ffffff;
+  }
+
+  /* メインコンテンツ */
+  main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  main h1 {
+    font-size: 3rem;
+    color: #61dafb;
+    margin: 0 0 10px 0;
+  }
+  main p {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  /* ボタン群 */
+  .buttons {
+    margin-top: 20px;
+  }
+  a.button {
+    display: inline-block;
+    padding: 10px 22px;
+    margin: 6px;
+    background: #61dafb;
+    color: #1e1e2e;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  a.button:hover {
+    background: #ffffff;
+    color: #1e1e2e;
+  }
+
+  /* フッター */
+  footer {
+    padding: 12px;
+    font-size: 0.8rem;
+    color: #bbb;
+    text-align: center;
+  }
+
+</style>
 </head>
 <body>
+
+  <div class="background-image"></div>
+  <div class="overlay"></div>
+
+  <nav>
+    <a href="https://github.com/yucchannel/codev">GitHub</a>
+    <a href="https://github.com/yucchannel/codev/releases/latest">Download</a>
+    <a href="https://yucchannel.github.io/codev/blog.html">Blog</a>
+    <a href="#features">Features</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
     <h1>Codev</h1>
-    <p>A lightweight, modern Python-based code editor with multi-tab support, file explorer, and real-time execution.
-       Now featuring Light/Dark mode and 2× performance improvement!</p>
+    <p>
+      A lightweight, modern Python-based code editor with multi-tab support, file explorer, and real-time execution.
+      Now featuring Light/Dark mode and 2× performance improvement!
+    </p>
     <div class="buttons">
-        <a href="https://github.com/yucchannel/codev" class="button">GitHub Repository</a>
-        <a href="https://github.com/yucchannel/codev/releases/latest" class="button">Download Latest</a>
+      <a href="https://github.com/yucchannel/codev" class="button">GitHub Repository</a>
+      <a href="https://github.com/yucchannel/codev/releases/latest" class="button">Download Latest</a>
+      <a href="https://yucchannel.github.io/codev/blog.html" class="button">Blog</a>
     </div>
-    <a href="blog.html">blog</a>
-    <small>© NovaWorks</small>
+  </main>
+
+  <footer>
+    © NovaWorks
+  </footer>
+
 </body>
 </html>
