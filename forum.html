@@ -4,6 +4,50 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Codev リアルタイム掲示板フォーム</title>
+  <header>
+  <nav class="menu-bar">
+    <div class="logo">Codev</div>
+    <div class="menu-items">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="manual.html">Manual</a>
+      <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener">Download</a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .menu-bar {
+    background-color: #1e1e2e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  .logo {
+    color: #61dafb;
+    font-weight: bold;
+    font-size: 1.5rem;
+    user-select: none;
+  }
+  .menu-items a {
+    color: #add8e6;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .menu-items a:hover {
+    color: #ffffff;
+  }
+</style>
+
 <style>
   /* リセットとボックスサイズ */
   * {
