@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Codev 開発ブログ</title>
+<title>Codev Development Blog</title>
 <style>
   body {
     margin: 0;
@@ -17,121 +17,132 @@
     align-items: center;
     padding: 20px;
   }
-  main {
-    background: rgba(30, 30, 46, 0.85);
-    max-width: 800px;
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(30,30,46,0.8);
+    z-index: -1;
+  }
+  header {
     width: 100%;
-    border-radius: 10px;
-    padding: 30px;
+    background: rgba(106, 90, 205, 0.8);
+    padding: 10px 20px;
     box-sizing: border-box;
-    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  h1 {
-    color: #61dafb;
-    text-align: center;
-    margin-bottom: 1rem;
-    font-weight: 900;
-    font-size: 2.5rem;
+  header h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #add8e6;
+    user-select: none;
   }
-  section {
-    margin-bottom: 2rem;
-  }
-  h2 {
-    border-bottom: 2px solid #61dafb;
-    padding-bottom: 0.3rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-  }
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  li {
-    margin-bottom: 0.8rem;
-    line-height: 1.5;
-  }
-  .version {
-    color: #a0d8ef;
-    font-weight: 700;
-    font-size: 1.15rem;
-  }
-  .patch {
-    color: #f88;
+  nav a {
+    color: #add8e6;
+    text-decoration: none;
+    margin-left: 15px;
     font-weight: 600;
+    font-size: 1rem;
+    user-select: none;
+  }
+  nav a:hover {
+    color: #ffffff;
+  }
+  main {
+    flex: 1;
+    max-width: 800px;
+    background: rgba(30, 30, 46, 0.8);
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    overflow-y: auto;
+  }
+  main h2 {
+    color: #61dafb;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  article {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 15px;
+  }
+  article h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    color: #add8e6;
+  }
+  article time {
+    font-size: 0.85rem;
+    color: #aaa;
+  }
+  article p {
+    line-height: 1.5;
+    font-size: 1rem;
+    margin: 10px 0 0 0;
   }
   footer {
-    margin-top: auto;
-    padding: 10px;
-    font-size: 0.8rem;
-    color: #888;
-  }
-  a {
-    color: #61dafb;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #bbb;
+    user-select: none;
+    text-align: center;
   }
 </style>
 </head>
 <body>
+<header>
+  <h1>Codev</h1>
+  <nav>
+    <a href="index.html" rel="noopener">Home</a>
+    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub Repository</a>
+    <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener">Download Latest</a>
+  </nav>
+</header>
 <main>
-  <h1>Codev 開発ブログ</h1>
+  <h2>Development Blog</h2>
 
-  <section>
-    <h2><span class="version">1.0.0-pre (#1)</span></h2>
-    <ul>
-      <li>最初の機能追加リリース。</li>
-      <li>基本的なマルチタブ編集とファイルエクスプローラーを実装。</li>
-      <li>自動補完機能もこの段階で搭載。</li>
-    </ul>
-  </section>
+  <article>
+    <h3>Version 1.0.4 - Final</h3>
+    <time>2025-07-21</time>
+    <p>バグ修正とUI改善。ファイルツリーの同期安定化、オートコンプリートの強化。</p>
+  </article>
 
-  <section>
-    <h2><span class="version">1.0.0-beta</span></h2>
-    <ul>
-      <li>主要な新機能を固めたベータ版。</li>
-      <li>複数の言語対応や実行機能を追加。</li>
-      <li>バグは残るが動作は安定し始める。</li>
-    </ul>
-  </section>
+  <article>
+    <h3>Version 1.0.4 - Beta</h3>
+    <time>2025-07-15</time>
+    <p>リアルタイム共同編集機能追加、通信の安定化を図る。バグ多めなので注意。</p>
+  </article>
 
-  <section>
-    <h2><span class="version">1.0.3-final</span></h2>
-    <ul>
-      <li>ほぼ完成形のリリース一歩手前。</li>
-      <li>UI改善とエラー処理強化。</li>
-      <li>大幅なパフォーマンス向上。</li>
-    </ul>
-  </section>
+  <article>
+    <h3>Version 1.0.4 - Pre #1</h3>
+    <time>2025-07-10</time>
+    <p>ファイル操作の多言語対応。コードエディターの拡張性アップ。バージョニング方式を拡張。</p>
+  </article>
 
-  <section>
-    <h2><span class="version patch">1.0.3-patch#1</span></h2>
-    <ul>
-      <li>1.0.3-finalの軽微なバグ修正。</li>
-      <li>いくつかのクラッシュ問題を解決。</li>
-    </ul>
-  </section>
+  <article>
+    <h3>Version 1.0.3 - Final</h3>
+    <time>2025-07-05</time>
+    <p>UIの大幅改良。エラーログとコンソール分割表示を導入。</p>
+  </article>
 
-  <section>
-    <h2><span class="version">1.0.4-pre</span></h2>
-    <ul>
-      <li>新機能の追加テスト版。</li>
-      <li>さらに50以上のプログラミング言語対応。</li>
-    </ul>
-  </section>
+  <article>
+    <h3>Version 1.0.2 - Beta</h3>
+    <time>2025-06-28</time>
+    <p>拡張機能の動的ロード対応。シェルコマンド実行機能追加。</p>
+  </article>
 
-  <section>
-    <h2><span class="version">1.0.4-beta</span></h2>
-    <ul>
-      <li>新機能を固めたベータ版。</li>
-      <li>UIの使い勝手改善、バグ修正を含む。</li>
-    </ul>
-  </section>
+  <article>
+    <h3>Version 1.0.1 - Pre #1</h3>
+    <time>2025-06-20</time>
+    <p>最初のパッチ。基本的なファイル操作機能の追加とUI構築。</p>
+  </article>
 
-  <footer>
-    © NovaWorks - <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
-  </footer>
 </main>
+<footer>© NovaWorks</footer>
 </body>
 </html>
