@@ -1,82 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codev Development Blog</title>
-    <style>
-        :root {
-            --bg-light: #ffffff;
-            --text-light: #333333;
-            --bg-dark: #1e1e2e;
-            --text-dark: #f0f0f0;
-            --accent: #61dafb;
-        }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-light);
-            padding: 20px;
-            transition: background 0.3s, color 0.3s;
-        }
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: var(--bg-dark);
-                color: var(--text-dark);
-            }
-        }
-        h1 {
-            text-align: center;
-            color: var(--accent);
-        }
-        .post {
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 20px;
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.03);
-        }
-        @media (prefers-color-scheme: dark) {
-            .post {
-                background: rgba(255, 255, 255, 0.05);
-            }
-        }
-        .post h2 {
-            margin-top: 0;
-        }
-        .date {
-            font-size: 0.9em;
-            color: gray;
-        }
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Codev 開発ブログ</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #1e1e2e url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  main {
+    background: rgba(30, 30, 46, 0.85);
+    max-width: 800px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  }
+  h1 {
+    color: #61dafb;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    font-size: 2.5rem;
+  }
+  section {
+    margin-bottom: 2rem;
+  }
+  h2 {
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  li {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+  }
+  .version {
+    color: #a0d8ef;
+    font-weight: 700;
+    font-size: 1.15rem;
+  }
+  .patch {
+    color: #f88;
+    font-weight: 600;
+  }
+  footer {
+    margin-top: auto;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: #888;
+  }
+  a {
+    color: #61dafb;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
 </head>
 <body>
-    <h1>Codev Development Blog</h1>
+<main>
+  <h1>Codev 開発ブログ</h1>
 
-    <div class="post">
-        <h2>Version 1.1 Released – Faster & Lighter</h2>
-        <p class="date">2025-07-20</p>
-        <p>We’ve released Codev v1.1! It’s now 2× lighter and introduces auto Light/Dark mode switching. 
-           The update also brings improved threading for smoother performance.</p>
-    </div>
+  <section>
+    <h2><span class="version">1.0.0-pre (#1)</span></h2>
+    <ul>
+      <li>最初の機能追加リリース。</li>
+      <li>基本的なマルチタブ編集とファイルエクスプローラーを実装。</li>
+      <li>自動補完機能もこの段階で搭載。</li>
+    </ul>
+  </section>
 
-    <div class="post">
-        <h2>Initial Release – Codev v1.0</h2>
-        <p class="date">2025-07-18</p>
-        <p>Our first public release of Codev is here! Featuring a built-in file explorer, multi-tab editor, 
-           and live Python execution.</p>
-    </div>
+  <section>
+    <h2><span class="version">1.0.0-beta</span></h2>
+    <ul>
+      <li>主要な新機能を固めたベータ版。</li>
+      <li>複数の言語対応や実行機能を追加。</li>
+      <li>バグは残るが動作は安定し始める。</li>
+    </ul>
+  </section>
 
-    <p style="text-align:center;">
-        <a href="index.html">← Back to Home</a>
-    </p>
+  <section>
+    <h2><span class="version">1.0.3-final</span></h2>
+    <ul>
+      <li>ほぼ完成形のリリース一歩手前。</li>
+      <li>UI改善とエラー処理強化。</li>
+      <li>大幅なパフォーマンス向上。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="version patch">1.0.3-patch#1</span></h2>
+    <ul>
+      <li>1.0.3-finalの軽微なバグ修正。</li>
+      <li>いくつかのクラッシュ問題を解決。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="version">1.0.4-pre</span></h2>
+    <ul>
+      <li>新機能の追加テスト版。</li>
+      <li>さらに50以上のプログラミング言語対応。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="version">1.0.4-beta</span></h2>
+    <ul>
+      <li>新機能を固めたベータ版。</li>
+      <li>UIの使い勝手改善、バグ修正を含む。</li>
+    </ul>
+  </section>
+
+  <footer>
+    © NovaWorks - <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+  </footer>
+</main>
 </body>
 </html>
