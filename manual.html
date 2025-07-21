@@ -63,10 +63,51 @@
     background: #61dafb;
     color: #1e1e2e;
   }
+  header {
+  width: 100%;
+  background: rgba(106, 90, 205, 0.8); /* 紫系半透明 */
+  padding: 10px 20px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+header h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #add8e6; /* 薄い水色 */
+}
+
+nav a {
+  color: #add8e6;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
 </style>
 </head>
 <body>
   <h1>Codev マニュアル</h1>
+<header>
+  <nav>
+    <a href="index.html" rel="noopener">Home</a>
+    <a href="blog.html" rel="noopener">Blog</a>
+    <a href="manual.html" rel="noopener">Manual</a>
+    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener">Download</a>
+  </nav>
+</header>
 
   <section>
     <h2>概要</h2>
