@@ -15,75 +15,89 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 0 20px 40px;
   }
 
   header {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 10px 40px;
-    box-sizing: border-box;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    z-index: 1000;
   }
+
   header h1 {
     margin: 0;
     font-weight: bold;
     font-size: 1.8rem;
-    color: #add8e6;
+    color: #61dafb;
     user-select: none;
   }
+
   nav a {
-    color: #add8e6;
+    color: #61dafb;
     text-decoration: none;
-    margin-left: 15px;
+    margin-left: 25px;
     font-weight: 600;
     font-size: 1rem;
     user-select: none;
+    white-space: nowrap;
   }
+
   nav a:hover {
     color: #ffffff;
   }
+
   main {
     flex: 1;
-    padding: 100px 20px 80px; /* 上にメニューバー分の余裕、下に余白 */
-    max-width: 900px;
     margin: 0 auto;
+    max-width: 900px;
+    padding: 100px 20px 80px; /* メニューバー高さ + 余白 */
     background: rgba(0, 0, 0, 0.6);
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.7);
     overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
   }
+
   main h2 {
     color: #61dafb;
     margin-bottom: 20px;
     text-align: center;
   }
+
   article {
     margin-bottom: 30px;
     border-bottom: 1px solid #555;
     padding-bottom: 15px;
   }
+
   article h3 {
     margin: 0 0 8px 0;
     font-size: 1.3rem;
     color: #add8e6;
   }
+
   article time {
     font-size: 0.85rem;
     color: #aaa;
   }
+
   article p {
     line-height: 1.5;
     font-size: 1rem;
     margin: 10px 0 0 0;
   }
+
   footer {
     margin-top: 40px;
     font-size: 0.85rem;
@@ -98,8 +112,10 @@
   <h1>Codev</h1>
   <nav>
     <a href="index.html" rel="noopener">Home</a>
-    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub Repository</a>
-    <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener">Download Latest</a>
+    <a href="manual.html" rel="noopener">Manual</a>
+    <a href="blog.html" rel="noopener">Blog</a>
+    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener">Download</a>
   </nav>
 </header>
 <main>
@@ -140,7 +156,6 @@
     <time>2025-06-20</time>
     <p>最初のパッチ。基本的なファイル操作機能の追加とUI構築。</p>
   </article>
-
 </main>
 <footer>© NovaWorks</footer>
 </body>
