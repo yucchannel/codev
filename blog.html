@@ -3,140 +3,173 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Codev Development Blog</title>
+<title>Codev - 開発ブログ</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
   body {
     margin: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: #1e1e2e url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(135deg, #6a5acdcc 0%, #483d8bcc 100%), url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
     background-size: cover;
-    color: #eee;
+    color: #e0e0ff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
   }
 
-  header {
-    width: 100%;
-    background: rgba(106, 90, 205, 0.8);
-    padding: 10px 20px;
-    box-sizing: border-box;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  nav.menu-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background: rgba(58, 42, 120, 0.85);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-  }
-  header h1 {
-    margin: 0;
-    font-weight: bold;
-    font-size: 1.8rem;
-    color: #add8e6;
+    padding: 0 40px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.7);
+    z-index: 1000;
     user-select: none;
   }
-  nav a {
-    color: #add8e6;
+  nav.menu-bar a {
+    color: #c3d6ff;
     text-decoration: none;
-    margin-left: 15px;
     font-weight: 600;
-    font-size: 1rem;
-    user-select: none;
+    font-size: 1.1rem;
+    margin-right: 32px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+    box-shadow: 0 0 0 transparent;
   }
-  nav a:hover {
-    color: #ffffff;
+  nav.menu-bar a:last-child {
+    margin-right: 0;
   }
-  main {
+  nav.menu-bar a:hover,
+  nav.menu-bar a:focus {
+    background: #b0aaffcc;
+    color: #1e1e2e;
+    box-shadow: 0 0 8px #d4d9ff;
+    outline: none;
+  }
+
+  main.content {
     flex: 1;
-    max-width: 800px;
-    background: rgba(30, 30, 46, 0.8);
-    padding: 25px 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-    overflow-y: auto;
+    max-width: 900px;
+    margin: 80px auto 40px;
+    background: rgba(40, 35, 75, 0.85);
+    border-radius: 16px;
+    padding: 32px 40px;
+    box-shadow: 0 0 30px #6f63d8cc;
+    user-select: text;
   }
-  main h2 {
-    color: #61dafb;
+
+  main.content h1 {
+    font-size: 2.8rem;
     margin-bottom: 20px;
     text-align: center;
+    text-shadow: 0 0 15px #9a91ff;
   }
-  article {
-    margin-bottom: 30px;
-    border-bottom: 1px solid #555;
-    padding-bottom: 15px;
+
+  article.post {
+    margin-bottom: 36px;
+    border-bottom: 1px solid #7a6ce0aa;
+    padding-bottom: 24px;
   }
-  article h3 {
-    margin: 0 0 8px 0;
-    font-size: 1.3rem;
-    color: #add8e6;
+  article.post:last-child {
+    border-bottom: none;
   }
-  article time {
-    font-size: 0.85rem;
-    color: #aaa;
+
+  article.post h2 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    color: #c8c8ffdd;
   }
-  article p {
-    line-height: 1.5;
-    font-size: 1rem;
-    margin: 10px 0 0 0;
+  article.post time {
+    font-size: 0.9rem;
+    color: #bbbbeeaa;
+    margin-bottom: 16px;
+    display: block;
   }
+  article.post p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #ddd;
+  }
+
   footer {
-    margin-top: 40px;
-    font-size: 0.85rem;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 0.9rem;
     color: #bbb;
     user-select: none;
-    text-align: center;
+    text-shadow: 0 0 3px #4b46a8;
   }
 </style>
 </head>
 <body>
-<header>
-  <h1>Codev</h1>
-  <nav>
-    <a href="index.html" rel="noopener">Home</a>
-    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub Repository</a>
-    <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener">Download Latest</a>
+  <nav class="menu-bar" role="navigation" aria-label="Main menu">
+    <a href="index.html" tabindex="1">ホーム</a>
+    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener" tabindex="2">GitHub</a>
+    <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener" tabindex="3">最新版DL</a>
+    <a href="manual.html" tabindex="4">マニュアル</a>
+    <a href="blog.html" tabindex="5">開発ブログ</a>
   </nav>
-</header>
-<main>
-  <h2>Development Blog</h2>
 
-  <article>
-    <h3>Version 1.0.4 - Final</h3>
-    <time>2025-07-21</time>
-    <p>バグ修正とUI改善。ファイルツリーの同期安定化、オートコンプリートの強化。</p>
-  </article>
+  <main class="content" role="main">
+    <h1>開発ブログ</h1>
 
-  <article>
-    <h3>Version 1.0.4 - Beta</h3>
-    <time>2025-07-15</time>
-    <p>リアルタイム共同編集機能追加、通信の安定化を図る。バグ多めなので注意。</p>
-  </article>
+    <article class="post">
+      <h2>Version 1.0.4 - パッチ #1 リリース</h2>
+      <time datetime="2025-07-21">2025年7月21日</time>
+      <p>
+        軽微なバグ修正と安定性向上を行いました。パッチは #1 として管理し、細かい修正を迅速に対応。
+      </p>
+    </article>
 
-  <article>
-    <h3>Version 1.0.4 - Pre #1</h3>
-    <time>2025-07-10</time>
-    <p>ファイル操作の多言語対応。コードエディターの拡張性アップ。バージョニング方式を拡張。</p>
-  </article>
+    <article class="post">
+      <h2>Version 1.0.4 - Beta リリース</h2>
+      <time datetime="2025-07-15">2025年7月15日</time>
+      <p>
+        新機能の追加を固めたβ版。複数の言語対応強化とUIの大幅改善を実施。まだ軽微な不具合が残っていますが動作は安定しています。
+      </p>
+    </article>
 
-  <article>
-    <h3>Version 1.0.3 - Final</h3>
-    <time>2025-07-05</time>
-    <p>UIの大幅改良。エラーログとコンソール分割表示を導入。</p>
-  </article>
+    <article class="post">
+      <h2>Version 1.0.4 - Pre リリース</h2>
+      <time datetime="2025-07-10">2025年7月10日</time>
+      <p>
+        機能追加を中心としたプレリリース版。マルチタブとリアルタイム実行が初実装されました。
+      </p>
+    </article>
 
-  <article>
-    <h3>Version 1.0.2 - Beta</h3>
-    <time>2025-06-28</time>
-    <p>拡張機能の動的ロード対応。シェルコマンド実行機能追加。</p>
-  </article>
+    <article class="post">
+      <h2>Version 1.0.3 - Final リリース</h2>
+      <time datetime="2025-06-30">2025年6月30日</time>
+      <p>
+        ベータ版の修正を重ねて、ほぼ完成形のファイナルリリース。UIの細かいバグ修正とパフォーマンス改善。
+      </p>
+    </article>
 
-  <article>
-    <h3>Version 1.0.1 - Pre #1</h3>
-    <time>2025-06-20</time>
-    <p>最初のパッチ。基本的なファイル操作機能の追加とUI構築。</p>
-  </article>
+    <article class="post">
+      <h2>Version 1.0.2 - Beta リリース</h2>
+      <time datetime="2025-06-20">2025年6月20日</time>
+      <p>
+        新機能追加と初期のバグ修正。動作は安定しており、今後のアップデートに向けた基盤ができました。
+      </p>
+    </article>
 
-</main>
-<footer>© NovaWorks</footer>
+    <article class="post">
+      <h2>Version 1.0.1 - Pre リリース</h2>
+      <time datetime="2025-06-10">2025年6月10日</time>
+      <p>
+        初期プレリリース版。基本的なコード編集機能が利用可能。今後の拡張に備えた最初の一歩。
+      </p>
+    </article>
+
+  </main>
+
+  <footer>
+    &copy; NovaWorks
+  </footer>
 </body>
 </html>
