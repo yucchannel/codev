@@ -3,135 +3,135 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Codev - 軽量Pythonコードエディター</title>
+<title>Codev - Lightweight Python Code Editor</title>
 <style>
-  /* メニューバー */
-  nav.menu-bar {
+  /* 固定メニューバー */
+  header {
     position: fixed;
     top: 0; left: 0; right: 0;
     height: 60px;
-    background: rgba(58, 42, 120, 0.85);
+    background: rgba(30, 30, 46, 0.85);
+    box-shadow: 0 0 10px #0008;
     display: flex;
     align-items: center;
     padding: 0 40px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.7);
+    box-sizing: border-box;
     z-index: 1000;
     user-select: none;
   }
-  nav.menu-bar a {
-    color: #c3d6ff;
+  header h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #add8e6;
+    user-select: none;
+  }
+  nav {
+    margin-left: auto;
+  }
+  nav a {
+    color: #add8e6;
     text-decoration: none;
+    margin-left: 24px;
     font-weight: 600;
-    font-size: 1.1rem;
-    margin-right: 32px;
+    font-size: 1rem;
     padding: 8px 14px;
     border-radius: 8px;
     transition: background 0.3s ease, color 0.3s ease;
-    box-shadow: 0 0 0 transparent;
   }
-  nav.menu-bar a:last-child {
-    margin-right: 0;
-  }
-  nav.menu-bar a:hover,
-  nav.menu-bar a:focus {
-    background: #b0aaffcc;
+  nav a:hover,
+  nav a:focus {
+    background: #61dafb44;
     color: #1e1e2e;
-    box-shadow: 0 0 8px #d4d9ff;
     outline: none;
   }
 
+  /* body・背景 */
   body {
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
+    background: #1e1e2e url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
     background-size: cover;
     color: #eee;
-    position: relative;
     min-height: 100vh;
-    padding-top: 80px; /* メニューバー用余白 */
+    padding: 80px 20px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main {
+    flex: 1;
+    max-width: 900px;
+    background: rgba(30, 30, 46, 0.8);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    overflow-y: auto;
     text-align: center;
   }
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(106, 90, 205, 0.4);
-    z-index: -1;
-  }
 
-  h1 {
-    font-size: 4rem;
-    margin-top: 40px;
-    color: #add8e6;
-    text-shadow: 0 0 20px #b0c4de;
+  main h2 {
+    color: #61dafb;
+    margin-bottom: 20px;
   }
-
-  p.lead {
-    font-size: 1.5rem;
-    max-width: 700px;
-    margin: 20px auto 40px;
+  main p {
+    font-size: 1.1rem;
     line-height: 1.6;
+    margin-bottom: 30px;
   }
-
   .buttons {
-    margin-bottom: 60px;
+    margin-top: 20px;
   }
-  a.button {
+  .buttons a {
     display: inline-block;
-    padding: 14px 28px;
+    padding: 12px 28px;
     margin: 8px;
     background: #61dafb;
     color: #1e1e2e;
+    font-weight: bold;
     text-decoration: none;
     border-radius: 8px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    box-shadow: 0 2px 6px #2c9ed1aa;
     transition: background 0.3s ease, color 0.3s ease;
-    user-select: none;
   }
-  a.button:hover,
-  a.button:focus {
+  .buttons a:hover {
     background: #ffffff;
     color: #1e1e2e;
-    box-shadow: 0 0 15px #74c0fcaa;
-    outline: none;
   }
 
-  small {
-    color: #aaa;
+  footer {
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #bbb;
     user-select: none;
-  }
-
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 3rem;
-    }
-    p.lead {
-      font-size: 1.2rem;
-      padding: 0 15px;
-    }
+    text-align: center;
   }
 </style>
 </head>
 <body>
-  <nav class="menu-bar" role="navigation" aria-label="Main menu">
-    <a href="index.html" tabindex="1">ホーム</a>
-    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener" tabindex="2">GitHub</a>
-    <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener" tabindex="3">最新版DL</a>
-    <a href="manual.html" tabindex="4">マニュアル</a>
-    <a href="blog.html" tabindex="5">開発ブログ</a>
-  </nav>
-
+<header>
   <h1>Codev</h1>
-  <p class="lead">軽量かつモダンなPythonコードエディター。<br>マルチタブ編集、ファイルエクスプローラー、リアルタイム実行対応。<br>ライト/ダークモード、2倍高速化も実装済み！</p>
+  <nav>
+    <a href="index.html" tabindex="1">ホーム</a>
+    <a href="manual.html" tabindex="2">マニュアル</a>
+    <a href="blog.html" tabindex="3">開発ブログ</a>
+    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener" tabindex="4">GitHub</a>
+    <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener" tabindex="5">最新版DL</a>
+  </nav>
+</header>
+<main>
+  <h2>Codev - 軽量Pythonコードエディター</h2>
+  <p>CodevはPythonで作られた軽量で高速なコードエディターです。マルチタブ編集、ファイルエクスプローラー、リアルタイム実行、拡張機能対応など多彩な機能を備えています。</p>
+  <p>ライトモード・ダークモード切替対応や、パフォーマンス向上も実施済み。これからの開発も活発に進めています。</p>
 
   <div class="buttons">
-    <a href="https://github.com/yucchannel/codev" class="button" target="_blank" rel="noopener">GitHub リポジトリ</a>
-    <a href="https://github.com/yucchannel/codev/releases/latest" class="button" target="_blank" rel="noopener">最新版ダウンロード</a>
-    <a href="blog.html" class="button">開発ブログ</a>
+    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHubリポジトリ</a>
+    <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener">最新版をダウンロード</a>
+    <a href="manual.html">マニュアルを見る</a>
+    <a href="blog.html">開発ブログを読む</a>
   </div>
-
-  <small>© NovaWorks</small>
+</main>
+<footer>© NovaWorks</footer>
 </body>
 </html>
