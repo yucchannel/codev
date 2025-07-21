@@ -5,108 +5,157 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Codev - Lightweight Python Code Editor</title>
 <style>
-  /* 固定メニューバー */
-  header {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 60px;
-    background: rgba(30, 30, 46, 0.85);
-    box-shadow: 0 0 10px #0008;
-    display: flex;
-    align-items: center;
-    padding: 0 40px;
-    box-sizing: border-box;
-    z-index: 1000;
-    user-select: none;
-  }
-  header h1 {
-    margin: 0;
-    font-weight: bold;
-    font-size: 1.8rem;
-    color: #add8e6;
-    user-select: none;
-  }
-  nav {
-    margin-left: auto;
-  }
-  nav a {
-    color: #add8e6;
-    text-decoration: none;
-    margin-left: 24px;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 8px 14px;
-    border-radius: 8px;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-  nav a:hover,
-  nav a:focus {
-    background: #61dafb44;
-    color: #1e1e2e;
-    outline: none;
-  }
+/* 共通スタイル */
 
-  /* body・背景 */
-  body {
-    margin: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: #1e1e2e url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #eee;
-    min-height: 100vh;
-    padding: 80px 20px 40px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+/* 全体設定 */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #1e1e2e url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #eee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
-  main {
-    flex: 1;
-    max-width: 900px;
-    background: rgba(30, 30, 46, 0.8);
-    padding: 30px 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-    overflow-y: auto;
-    text-align: center;
-  }
+/* 背景オーバーレイ（半透明紫） */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(106, 90, 205, 0.4); /* 紫系半透明 */
+  z-index: -1;
+}
 
-  main h2 {
-    color: #61dafb;
-    margin-bottom: 20px;
-  }
-  main p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-  }
-  .buttons {
-    margin-top: 20px;
-  }
-  .buttons a {
-    display: inline-block;
-    padding: 12px 28px;
-    margin: 8px;
-    background: #61dafb;
-    color: #1e1e2e;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-  .buttons a:hover {
-    background: #ffffff;
-    color: #1e1e2e;
-  }
+/* ヘッダー */
+header {
+  width: 100%;
+  background: rgba(106, 90, 205, 0.8);
+  padding: 10px 20px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+header h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #add8e6; /* 薄い水色 */
+}
+nav a {
+  color: #add8e6;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #ffffff;
+}
 
-  footer {
-    margin-top: 40px;
-    font-size: 0.85rem;
-    color: #bbb;
-    user-select: none;
-    text-align: center;
-  }
+/* メインコンテンツ */
+main {
+  flex: 1;
+  max-width: 900px;
+  width: 100%;
+  background: rgba(30, 30, 46, 0.8);
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  overflow-y: auto;
+  color: #eee;
+}
+
+/* タイトル */
+h1, h2 {
+  color: #61dafb; /* 明るい青 */
+  text-align: center;
+  user-select: none;
+}
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #b0c4de;
+}
+h2 {
+  margin-bottom: 20px;
+}
+
+/* 記事ブロック */
+article {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #555;
+  padding-bottom: 15px;
+}
+article h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.3rem;
+  color: #add8e6;
+}
+article time {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+article p {
+  line-height: 1.5;
+  font-size: 1rem;
+  margin: 10px 0 0 0;
+}
+
+/* セクション */
+section {
+  background: rgba(30, 30, 46, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px #0008;
+  max-width: 900px;
+  color: #eee;
+}
+
+/* リスト */
+ul, ol {
+  margin-left: 20px;
+}
+
+/* リンク：ホームに戻るボタンなど */
+a.back-home {
+  display: block;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px 0;
+  font-weight: bold;
+  color: #61dafb;
+  text-decoration: none;
+  border: 2px solid #61dafb;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+a.back-home:hover {
+  background: #61dafb;
+  color: #1e1e2e;
+}
+
+/* フッター */
+footer {
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #bbb;
+  user-select: none;
+  text-align: center;
+  width: 100%;
+}
+
 </style>
 </head>
 <body>
