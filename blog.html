@@ -1,37 +1,107 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Codev 開発ブログ</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Codev Development Blog</title>
 <style>
-  body {margin:0;font-family:"Segoe UI",Tahoma,Verdana,sans-serif;
-    background:#1e1e2e url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
-    background-size:cover;color:#eee;min-height:100vh;display:flex;flex-direction:column;}
-  header {width:100%;background:rgba(30,30,46,0.85);padding:10px 20px;box-shadow:0 2px 5px rgba(0,0,0,0.5);
-    display:flex;justify-content:space-between;align-items:center;position:fixed;top:0;left:0;z-index:10;}
-  header h1 {margin:0;font-size:1.6rem;color:#61dafb;}
-  nav a {color:#add8e6;text-decoration:none;margin-left:15px;font-weight:600;font-size:1rem;}
-  nav a:hover {color:#ffffff;}
-  main {flex:1;padding:100px 20px 40px;max-width:800px;margin:0 auto;background:rgba(30,30,46,0.8);
-    border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.7);}
-  h2 {color:#61dafb;margin-bottom:20px;text-align:center;}
-  article {margin-bottom:30px;border-bottom:1px solid #555;padding-bottom:15px;}
-  article h3 {margin:0 0 8px;font-size:1.3rem;color:#add8e6;}
-  article time {font-size:0.85rem;color:#aaa;}
-  article p {line-height:1.5;font-size:1rem;margin:10px 0 0;}
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #1e1e2e url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 40px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  header h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #add8e6;
+    user-select: none;
+  }
+  nav a {
+    color: #add8e6;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    user-select: none;
+  }
+  nav a:hover {
+    color: #ffffff;
+  }
+  main {
+    flex: 1;
+    padding: 100px 20px 80px; /* 上にメニューバー分の余裕、下に余白 */
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    overflow-y: auto;
+  }
+  main h2 {
+    color: #61dafb;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  article {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 15px;
+  }
+  article h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    color: #add8e6;
+  }
+  article time {
+    font-size: 0.85rem;
+    color: #aaa;
+  }
+  article p {
+    line-height: 1.5;
+    font-size: 1rem;
+    margin: 10px 0 0 0;
+  }
+  footer {
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #bbb;
+    user-select: none;
+    text-align: center;
+  }
 </style>
 </head>
 <body>
 <header>
   <h1>Codev</h1>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="blog.html">Blog</a>
-    <a href="manual.html">Manual</a>
+    <a href="index.html" rel="noopener">Home</a>
+    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub Repository</a>
+    <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener">Download Latest</a>
   </nav>
 </header>
-
 <main>
   <h2>Development Blog</h2>
 
@@ -46,6 +116,32 @@
     <time>2025-07-15</time>
     <p>リアルタイム共同編集機能追加、通信の安定化を図る。バグ多めなので注意。</p>
   </article>
+
+  <article>
+    <h3>Version 1.0.4 - Pre #1</h3>
+    <time>2025-07-10</time>
+    <p>ファイル操作の多言語対応。コードエディターの拡張性アップ。バージョニング方式を拡張。</p>
+  </article>
+
+  <article>
+    <h3>Version 1.0.3 - Final</h3>
+    <time>2025-07-05</time>
+    <p>UIの大幅改良。エラーログとコンソール分割表示を導入。</p>
+  </article>
+
+  <article>
+    <h3>Version 1.0.2 - Beta</h3>
+    <time>2025-06-28</time>
+    <p>拡張機能の動的ロード対応。シェルコマンド実行機能追加。</p>
+  </article>
+
+  <article>
+    <h3>Version 1.0.1 - Pre #1</h3>
+    <time>2025-06-20</time>
+    <p>最初のパッチ。基本的なファイル操作機能の追加とUI構築。</p>
+  </article>
+
 </main>
+<footer>© NovaWorks</footer>
 </body>
 </html>
