@@ -18,20 +18,22 @@
 
   header {
     width: 100%;
-    background: rgba(106, 90, 205, 0.8);
+    background: rgba(30, 30, 46, 0.85);
     padding: 10px 20px;
-    box-sizing: border-box;
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
   }
   header h1 {
     margin: 0;
     font-weight: bold;
-    font-size: 1.8rem;
-    color: #add8e6;
-    user-select: none;
+    font-size: 1.6rem;
+    color: #61dafb;
   }
   nav a {
     color: #add8e6;
@@ -39,7 +41,6 @@
     margin-left: 15px;
     font-weight: 600;
     font-size: 1rem;
-    user-select: none;
   }
   nav a:hover {
     color: #ffffff;
@@ -47,81 +48,99 @@
 
   main {
     flex: 1;
-    padding: 30px 20px;
+    padding: 100px 20px 40px; /* ヘッダー分の余白を追加 */
     max-width: 900px;
     margin: 0 auto;
-    background: rgba(30, 30, 46, 0.7);
+  }
+  section {
+    background: rgba(30, 30, 46, 0.8);
     border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
     box-shadow: 0 0 10px #0008;
   }
-
   h2 {
-    color: #9acdff;
+    color: #61dafb;
     border-bottom: 1px solid #61dafb;
     padding-bottom: 6px;
     margin-bottom: 15px;
   }
-
-  ul, ol {
+  ul {
     margin-left: 20px;
   }
-
-  footer {
+  a.back-home {
+    display: block;
     text-align: center;
-    margin: 20px 0;
-    font-size: 0.85rem;
-    color: #bbb;
+    padding: 15px 0;
+    font-weight: bold;
+    color: #61dafb;
+    text-decoration: none;
+    border: 2px solid #61dafb;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+  }
+  a.back-home:hover {
+    background: #61dafb;
+    color: #1e1e2e;
   }
 </style>
 </head>
 <body>
 <header>
-  <h1>Codev</h1>
+  <h1>Codev マニュアル</h1>
   <nav>
     <a href="index.html">Home</a>
     <a href="blog.html">Blog</a>
     <a href="manual.html">Manual</a>
-    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub</a>
   </nav>
 </header>
 
 <main>
-  <h2>概要</h2>
-  <p>Codevは、Pythonで作られた軽量で高速なコードエディターです。マルチタブ編集、ファイルエクスプローラー、リアルタイムコード実行、拡張機能対応など多彩な機能を備えています。</p>
+  <section>
+    <h2>概要</h2>
+    <p>Codevは、Pythonで作られた軽量で高速なコードエディターです。マルチタブ編集、ファイルエクスプローラー、リアルタイムコード実行、拡張機能対応など多彩な機能を備えています。</p>
+  </section>
 
-  <h2>主な機能</h2>
-  <ul>
-    <li>マルチタブ対応で複数ファイルを同時編集可能</li>
-    <li>ファイルエクスプローラーでディレクトリを閲覧</li>
-    <li>Pythonコードのリアルタイム実行・出力確認</li>
-    <li>コード補完（オートコンプリート）機能搭載</li>
-    <li>エラー・コンソール出力を別パネルで表示</li>
-    <li>外部拡張機能の読み込みが可能</li>
-    <li>シェルコマンド実行パネル搭載</li>
-    <li>ライトモード・ダークモード切替（将来的に対応予定）</li>
-  </ul>
+  <section>
+    <h2>主な機能</h2>
+    <ul>
+      <li>マルチタブ対応で複数ファイルを同時編集可能</li>
+      <li>ファイルエクスプローラーでディレクトリを閲覧</li>
+      <li>Pythonコードのリアルタイム実行・出力確認</li>
+      <li>コード補完（オートコンプリート）機能搭載</li>
+      <li>エラー・コンソール出力を別パネルで表示</li>
+      <li>外部拡張機能の読み込みが可能</li>
+      <li>シェルコマンド実行パネル搭載</li>
+      <li>ライトモード・ダークモード切替（将来的に対応予定）</li>
+    </ul>
+  </section>
 
-  <h2>バージョン履歴（抜粋）</h2>
-  <ul>
-    <li><strong>1.0.0-pre</strong> - 最初のプレリリース、基本機能を実装</li>
-    <li><strong>1.0.0-beta</strong> - 新機能を追加し、動作確認を実施</li>
-    <li><strong>1.0.1-final</strong> - バグ修正と安定化を実施</li>
-    <li><strong>1.0.2-patch#1</strong> - 小規模修正、パフォーマンス向上</li>
-    <li><strong>1.0.3-final</strong> - UI改善と機能追加</li>
-    <li><strong>1.0.4-pre#20250721</strong> - 新しい背景画像対応、ドキュメント更新</li>
-  </ul>
+  <section>
+    <h2>バージョン履歴（抜粋）</h2>
+    <ul>
+      <li><strong>1.0.0-pre</strong> - 最初のプレリリース、基本機能を実装</li>
+      <li><strong>1.0.0-beta</strong> - 新機能を追加し、動作確認を実施</li>
+      <li><strong>1.0.1-final</strong> - バグ修正と安定化を実施</li>
+      <li><strong>1.0.2-patch#1</strong> - 小規模修正、パフォーマンス向上</li>
+      <li><strong>1.0.3-final</strong> - UI改善と機能追加</li>
+      <li><strong>1.0.4-pre#20250721</strong> - 新しい背景画像対応、ドキュメント更新</li>
+    </ul>
+  </section>
 
-  <h2>使い方</h2>
-  <ol>
-    <li>「ファイル」メニューから新規タブを作成、または既存ファイルを開きます。</li>
-    <li>コードを編集しながら、エラーや実行結果は下部のパネルで確認できます。</li>
-    <li>「Run」メニューで現在のタブのコードを実行可能です。</li>
-    <li>ファイルは適宜「保存」メニューで保存してください。</li>
-    <li>シェルコマンドも画面下部の入力欄から実行できます。</li>
-    <li>外部拡張機能は「Extensions」メニューから読み込めます。</li>
-  </ol>
+  <section>
+    <h2>使い方</h2>
+    <ol>
+      <li>「ファイル」メニューから新規タブを作成、または既存ファイルを開きます。</li>
+      <li>コードを編集しながら、エラーや実行結果は下部のパネルで確認できます。</li>
+      <li>「Run」メニューで現在のタブのコードを実行可能です。</li>
+      <li>ファイルは適宜「保存」メニューで保存してください。</li>
+      <li>シェルコマンドも画面下部の入力欄から実行できます。</li>
+      <li>外部拡張機能は「Extensions」メニューから読み込めます。</li>
+    </ol>
+  </section>
+
+  <a href="index.html" class="back-home">ホームに戻る</a>
 </main>
-
-<footer>© NovaWorks</footer>
 </body>
 </html>
