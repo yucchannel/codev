@@ -21,17 +21,47 @@
 
 <style>
   .menu-bar {
-    background-color: #1e1e2e;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 24px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.6);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
+  background-color: #1e1e2e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box; /* ←追加: 横幅にpadding含める */
+}
+
+.logo {
+  color: #61dafb;
+  font-weight: bold;
+  font-size: 1.5rem;
+  user-select: none;
+  flex-shrink: 0; /* ロゴが縮まらない */
+}
+
+.menu-items {
+  display: flex;       /* 横並びに */
+  gap: 20px;           /* リンク間の間隔 */
+  flex-grow: 1;        /* 右側メニューが親幅いっぱいに広がる */
+  justify-content: flex-end; /* 右寄せ */
+  box-sizing: border-box;
+}
+
+.menu-items a {
+  color: #add8e6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap; /* 改行されないように */
+}
+
+.menu-items a:hover {
+  color: #ffffff;
+}
+
   .logo {
     color: #61dafb;
     font-weight: bold;
