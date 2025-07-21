@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Codev - 軽量Pythonコードエディター</title>
 <style>
+  /* ページ全体 */
   body {
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -13,17 +14,40 @@
     color: #eee;
     position: relative;
     min-height: 100vh;
+    padding-top: 50px; /* メニューのぶん余白 */
   }
-  body::before {
-    content: "";
+  /* オーバーレイなし（紫なし）で画像そのまま見せる */
+
+  /* メニューバー */
+  nav.menu-bar {
+    background: rgba(30, 30, 46, 0.85);
     position: fixed;
-    inset: 0;
-    background: rgba(106, 90, 205, 0.4); /* 薄紫のオーバーレイ */
-    z-index: -1;
+    top: 0; left: 0; right: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    z-index: 1000;
   }
+  nav.menu-bar a {
+    color: #61dafb;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 24px;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  nav.menu-bar a:hover {
+    background: #61dafb;
+    color: #1e1e2e;
+  }
+
   header {
-    padding: 30px 20px;
     text-align: center;
+    padding: 40px 20px 20px;
   }
   header h1 {
     font-size: 3.5rem;
@@ -36,24 +60,7 @@
     max-width: 600px;
     margin: 10px auto 0;
   }
-  nav {
-    margin: 20px 0;
-    text-align: center;
-  }
-  nav a {
-    text-decoration: none;
-    color: #61dafb;
-    font-weight: bold;
-    margin: 0 12px;
-    padding: 10px 22px;
-    border-radius: 6px;
-    background: rgba(0, 0, 0, 0.25);
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-  nav a:hover {
-    background: #61dafb;
-    color: #1e1e2e;
-  }
+
   footer {
     text-align: center;
     padding: 12px 10px;
@@ -66,16 +73,19 @@
 </style>
 </head>
 <body>
+  <nav class="menu-bar">
+    <a href="index.html">ホーム</a>
+    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener">最新版DL</a>
+    <a href="manual.html">マニュアル</a>
+    <a href="https://yucchannel.github.io/codev/blog.html" target="_blank" rel="noopener">開発ブログ</a>
+  </nav>
+
   <header>
     <h1>Codev</h1>
     <p>軽量かつモダンなPythonコードエディター。マルチタブ、ファイルエクスプローラー、リアルタイム実行対応。<br>ライトモード／ダークモード切替、パフォーマンス2倍向上！</p>
   </header>
-  <nav>
-    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub リポジトリ</a>
-    <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank" rel="noopener">最新版ダウンロード</a>
-    <a href="manual.html">マニュアル</a>
-    <a href="https://yucchannel.github.io/codev/blog.html" target="_blank" rel="noopener">開発ブログ</a>
-  </nav>
+
   <footer>
     &copy; NovaWorks
   </footer>
