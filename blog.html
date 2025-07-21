@@ -3,72 +3,94 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Codev ホーム</title>
+<title>Codev Development Blog</title>
 <style>
   body {
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background: url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
     background-size: cover;
-    color: #f0f8ff;
-    position: relative;
+    color: #f0f0f0;
     min-height: 100vh;
+    position: relative;
   }
   body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.6); /* 全体を暗めに */
     z-index: -1;
   }
+
   header {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    background: rgba(20, 20, 20, 0.8);
+    background: rgba(20, 20, 20, 0.85);
     padding: 15px 30px;
-    box-sizing: border-box;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.7);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 10;
   }
   header h1 {
     margin: 0;
+    font-weight: bold;
     font-size: 1.8rem;
     color: #61dafb;
   }
   nav a {
-    color: #f0f8ff;
+    color: #61dafb;
     text-decoration: none;
     margin-left: 20px;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 1rem;
   }
   nav a:hover {
-    color: #61dafb;
+    color: #ffffff;
   }
+
   main {
-    padding: 100px 20px 40px;
+    flex: 1;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 120px auto 40px; /* ヘッダーと被らないように上マージン */
+    background: rgba(30, 30, 30, 0.85); /* 本文部分を暗く */
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
   }
-  h2 {
+  main h2 {
     color: #61dafb;
-    text-align: center;
     margin-bottom: 20px;
-  }
-  p {
-    line-height: 1.8;
     text-align: center;
-    font-size: 1.1rem;
+  }
+  article {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 15px;
+  }
+  article h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    color: #add8e6;
+  }
+  article time {
+    font-size: 0.85rem;
+    color: #aaa;
+  }
+  article p {
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 10px 0 0 0;
   }
   footer {
-    text-align: center;
-    padding: 20px;
-    color: #aaa;
+    margin: 20px 0;
     font-size: 0.85rem;
+    color: #bbb;
+    text-align: center;
   }
 </style>
 </head>
@@ -79,14 +101,51 @@
     <a href="index.html">Home</a>
     <a href="manual.html">Manual</a>
     <a href="blog.html">Blog</a>
-    <a href="https://github.com/yucchannel/codev" target="_blank">GitHub</a>
+    <a href="https://github.com/yucchannel/codev" target="_blank" rel="noopener">GitHub</a>
   </nav>
 </header>
+
 <main>
-  <h2>ようこそ、Codevへ</h2>
-  <p>Codevは軽量で高速なPython製コードエディターです。<br>
-  マルチタブ編集、リアルタイム実行、ファイルエクスプローラーなど豊富な機能を備えています。</p>
+  <h2>Development Blog</h2>
+
+  <article>
+    <h3>Version 1.0.4 - Final</h3>
+    <time>2025-07-21</time>
+    <p>バグ修正とUI改善。ファイルツリーの同期安定化、オートコンプリートの強化。</p>
+  </article>
+
+  <article>
+    <h3>Version 1.0.4 - Beta</h3>
+    <time>2025-07-15</time>
+    <p>リアルタイム共同編集機能追加、通信の安定化を図る。バグ多めなので注意。</p>
+  </article>
+
+  <article>
+    <h3>Version 1.0.4 - Pre #1</h3>
+    <time>2025-07-10</time>
+    <p>ファイル操作の多言語対応。コードエディターの拡張性アップ。バージョニング方式を拡張。</p>
+  </article>
+
+  <article>
+    <h3>Version 1.0.3 - Final</h3>
+    <time>2025-07-05</time>
+    <p>UIの大幅改良。エラーログとコンソール分割表示を導入。</p>
+  </article>
+
+  <article>
+    <h3>Version 1.0.2 - Beta</h3>
+    <time>2025-06-28</time>
+    <p>拡張機能の動的ロード対応。シェルコマンド実行機能追加。</p>
+  </article>
+
+  <article>
+    <h3>Version 1.0.1 - Pre #1</h3>
+    <time>2025-06-20</time>
+    <p>最初のパッチ。基本的なファイル操作機能の追加とUI構築。</p>
+  </article>
+
 </main>
+
 <footer>© NovaWorks</footer>
 </body>
 </html>
