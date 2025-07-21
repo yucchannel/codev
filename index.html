@@ -43,6 +43,116 @@
   }
   h2 {color: #61dafb; margin-bottom: 15px;}
   p {line-height: 1.5;}
+  /* 全体設定 */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #1e1e2e url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #eee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 40px; /* 横左右に余白追加 */
+}
+
+/* メニューバー */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(106, 90, 205, 0.8);
+  box-sizing: border-box;
+  padding: 10px 40px; /* 左右の内側余白を広めに */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+/* メニュータイトル */
+header h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #add8e6;
+  user-select: none;
+}
+
+/* ナビリンク */
+nav a {
+  color: #add8e6;
+  text-decoration: none;
+  margin-left: 25px; /* 間隔広め */
+  font-weight: 600;
+  font-size: 1rem;
+  user-select: none;
+  white-space: nowrap; /* 文字の折り返し防止 */
+}
+
+/* ナビリンク ホバー */
+nav a:hover {
+  color: #ffffff;
+}
+
+/* メインコンテンツ */
+main {
+  flex: 1;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 100px 20px 80px; /* 上にメニューバー分＋αの余白 */
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  overflow-y: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* メインタイトル */
+main h2 {
+  color: #61dafb;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ブログ記事 */
+article {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #555;
+  padding-bottom: 15px;
+}
+
+article h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.3rem;
+  color: #add8e6;
+}
+
+article time {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+article p {
+  line-height: 1.5;
+  font-size: 1rem;
+  margin: 10px 0 0 0;
+}
+
+/* フッター */
+footer {
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #bbb;
+  user-select: none;
+  text-align: center;
+}
+
 </style>
 </head>
 <body>
