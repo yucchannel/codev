@@ -5,23 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Codev マニュアル</title>
 <style>
-  body {margin:0;font-family:"Segoe UI",Tahoma,Verdana,sans-serif;
-    background:#1e1e2e url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
-    background-size:cover;color:#eee;min-height:100vh;display:flex;flex-direction:column;}
-  header {width:100%;background:rgba(30,30,46,0.85);padding:10px 20px;box-shadow:0 2px 5px rgba(0,0,0,0.5);
-    display:flex;justify-content:space-between;align-items:center;position:fixed;top:0;left:0;z-index:10;}
-  header h1 {margin:0;font-size:1.6rem;color:#61dafb;}
-  nav a {color:#add8e6;text-decoration:none;margin-left:15px;font-weight:600;font-size:1rem;}
-  nav a:hover {color:#ffffff;}
-  main {flex:1;padding:100px 20px 40px;max-width:900px;margin:0 auto;}
-  section {background:rgba(30,30,46,0.8);border-radius:10px;padding:20px;margin-bottom:30px;box-shadow:0 0 10px #0008;}
-  h2 {color:#61dafb;border-bottom:1px solid #61dafb;padding-bottom:6px;margin-bottom:15px;}
-  ul {margin-left:20px;}
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  header h1 {margin: 0; font-size: 1.6rem; color: #61dafb;}
+  nav a {color: #add8e6; text-decoration: none; margin-left: 15px; font-weight: 600; font-size: 1rem;}
+  nav a:hover {color: #ffffff;}
+  main {
+    flex: 1;
+    padding: 100px 20px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  }
+  section {margin-bottom: 30px;}
+  h2 {color: #61dafb; border-bottom: 1px solid #61dafb; padding-bottom: 6px; margin-bottom: 15px;}
+  ul {margin-left: 20px;}
 </style>
 </head>
 <body>
 <header>
-  <h1>Codev マニュアル</h1>
+  <h1>Codev</h1>
   <nav>
     <a href="index.html">Home</a>
     <a href="blog.html">Blog</a>
@@ -32,14 +58,14 @@
 <main>
   <section>
     <h2>概要</h2>
-    <p>CodevはPythonで作られた軽量で高速なコードエディターです。マルチタブ編集、ファイルエクスプローラー、リアルタイムコード実行など多彩な機能を備えています。</p>
+    <p>CodevはPythonで作られた軽量かつ高速なコードエディター。マルチタブ編集、ファイルエクスプローラー、リアルタイム実行などに対応。</p>
   </section>
 
   <section>
     <h2>使い方</h2>
     <ol>
-      <li>ファイルメニューから新規タブを作成または既存ファイルを開く。</li>
-      <li>コードを編集しながら下部パネルで実行結果を確認。</li>
+      <li>ファイルメニューから新規タブを作成またはファイルを開く。</li>
+      <li>コード編集しながら下部パネルでエラーと実行結果を確認。</li>
       <li>Runメニューで現在のタブを実行。</li>
     </ol>
   </section>
