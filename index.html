@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Codev ホーム</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Codev - Home</title>
 <style>
   body {
     margin: 0;
@@ -14,145 +14,64 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 0 20px 40px;
   }
   header {
-    width: 100%;
-    background: rgba(30, 30, 46, 0.85);
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    z-index: 1000;
   }
-  header h1 {margin: 0; font-size: 1.6rem; color: #61dafb;}
-  nav a {color: #add8e6; text-decoration: none; margin-left: 15px; font-weight: 600; font-size: 1rem;}
-  nav a:hover {color: #ffffff;}
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #61dafb;
+    user-select: none;
+  }
+  nav a {
+    color: #61dafb;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+  nav a:hover { color: #fff; }
   main {
     flex: 1;
-    padding: 100px 20px 40px;
-    max-width: 900px;
     margin: 0 auto;
-    background: rgba(30,30,46,0.8);
+    max-width: 900px;
+    padding: 100px 20px 80px;
+    background: rgba(0,0,0,0.6);
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.7);
     text-align: center;
   }
-  h2 {color: #61dafb; margin-bottom: 15px;}
-  p {line-height: 1.5;}
-  /* 全体設定 */
-body {
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #1e1e2e url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
-  background-size: cover;
-  color: #eee;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 20px 40px; /* 横左右に余白追加 */
-}
-
-/* メニューバー */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 30px;
-  background: rgba(106, 90, 205, 0.8);
-  box-sizing: border-box;
-  padding: 10px 40px; /* 左右の内側余白を広めに */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-  z-index: 1000;
-}
-
-/* メニュータイトル */
-header h1 {
-  margin: 0;
-  font-weight: bold;
-  font-size: 1.8rem;
-  color: #add8e6;
-  user-select: none;
-}
-
-/* ナビリンク */
-nav a {
-  color: #add8e6;
-  text-decoration: none;
-  margin-left: 25px; /* 間隔広め */
-  font-weight: 600;
-  font-size: 1rem;
-  user-select: none;
-  white-space: nowrap; /* 文字の折り返し防止 */
-}
-
-/* ナビリンク ホバー */
-nav a:hover {
-  color: #ffffff;
-}
-
-/* メインコンテンツ */
-main {
-  flex: 1;
-  margin: 0 auto;
-  max-width: 900px;
-  padding: 100px 20px 80px; /* 上にメニューバー分＋αの余白 */
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-  overflow-y: auto;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* メインタイトル */
-main h2 {
-  color: #61dafb;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* ブログ記事 */
-article {
-  margin-bottom: 30px;
-  border-bottom: 1px solid #555;
-  padding-bottom: 15px;
-}
-
-article h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.3rem;
-  color: #add8e6;
-}
-
-article time {
-  font-size: 0.85rem;
-  color: #aaa;
-}
-
-article p {
-  line-height: 1.5;
-  font-size: 1rem;
-  margin: 10px 0 0 0;
-}
-
-/* フッター */
-footer {
-  margin-top: 40px;
-  font-size: 0.85rem;
-  color: #bbb;
-  user-select: none;
-  text-align: center;
-}
-
+  main h2 { color: #61dafb; margin-bottom: 20px; }
+  main p { line-height: 1.5; }
+  .buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background: #61dafb;
+    color: #1e1e2e;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .buttons a:hover { background: #ffffff; }
+  footer { margin-top: 40px; font-size: 0.85rem; color: #bbb; }
 </style>
 </head>
 <body>
@@ -160,16 +79,22 @@ footer {
   <h1>Codev</h1>
   <nav>
     <a href="index.html">Home</a>
-    <a href="blog.html">Blog</a>
     <a href="manual.html">Manual</a>
+    <a href="blog.html">Blog</a>
+    <a href="https://github.com/yucchannel/codev" target="_blank">GitHub</a>
+    <a href="https://github.com/yucchannel/codev/releases/latest" target="_blank">Download</a>
   </nav>
 </header>
-
 <main>
-  <h2>Codevとは？</h2>
-  <p>Pythonで作られた軽量かつ高速なコードエディター。マルチタブ、ファイルエクスプローラー、リアルタイム実行など多機能。</p>
-  <p><strong>最新バージョン: 1.0.4-final</strong></p>
-  <a href="https://github.com/yucchannel/codev/releases/latest" style="color:#61dafb;">Download Latest</a>
+  <h2>Welcome to Codev</h2>
+  <p>Codevは軽量・高速なPython製のコードエディターです。<br>
+  マルチタブ、ファイルエクスプローラー、リアルタイム実行など多彩な機能を備えています。</p>
+  <div class="buttons">
+    <a href="manual.html">マニュアル</a>
+    <a href="blog.html">開発ブログ</a>
+    <a href="https://github.com/yucchannel/codev" target="_blank">GitHub</a>
+  </div>
 </main>
+<footer>© NovaWorks</footer>
 </body>
 </html>
