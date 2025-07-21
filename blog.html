@@ -3,21 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Codev - 開発ブログ</title>
+<title>Codev 開発ブログ</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
-  body {
-    margin: 0;
-    font-family: 'Montserrat', Arial, sans-serif;
-    background: linear-gradient(135deg, #6a5acdcc 0%, #483d8bcc 100%), url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #e0e0ff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
+  /* メニューバー */
   nav.menu-bar {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -52,57 +40,91 @@
     outline: none;
   }
 
-  main.content {
-    flex: 1;
-    max-width: 900px;
-    margin: 80px auto 40px;
-    background: rgba(40, 35, 75, 0.85);
-    border-radius: 16px;
-    padding: 32px 40px;
-    box-shadow: 0 0 30px #6f63d8cc;
-    user-select: text;
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #eee;
+    position: relative;
+    min-height: 100vh;
+    padding-top: 80px; /* メニューバー用余白 */
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(106, 90, 205, 0.4);
+    z-index: -1;
   }
 
-  main.content h1 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
+  main {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    background: rgba(30, 30, 46, 0.85);
+    border-radius: 12px;
+    padding: 30px 30px 40px;
+    box-shadow: 0 0 20px #000c;
+  }
+
+  h1 {
     text-align: center;
-    text-shadow: 0 0 15px #9a91ff;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #add8e6;
+    text-shadow: 0 0 15px #b0c4de;
   }
 
   article.post {
     margin-bottom: 36px;
-    border-bottom: 1px solid #7a6ce0aa;
-    padding-bottom: 24px;
   }
-  article.post:last-child {
-    border-bottom: none;
-  }
-
   article.post h2 {
-    font-size: 1.6rem;
-    margin-bottom: 8px;
-    color: #c8c8ffdd;
+    color: #9acdff;
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
   }
   article.post time {
     font-size: 0.9rem;
-    color: #bbbbeeaa;
-    margin-bottom: 16px;
-    display: block;
+    color: #a2aaffcc;
+    user-select: none;
   }
   article.post p {
-    line-height: 1.6;
-    font-size: 1.1rem;
-    color: #ddd;
+    line-height: 1.5;
+    font-size: 1.15rem;
+    margin-top: 8px;
+    white-space: pre-wrap;
   }
 
-  footer {
+  a.back-home {
+    display: block;
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
-    padding: 12px 20px;
-    font-size: 0.9rem;
-    color: #bbb;
+    padding: 15px 0;
+    font-weight: 700;
+    color: #61dafb;
+    text-decoration: none;
+    border: 2px solid #61dafb;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
     user-select: none;
-    text-shadow: 0 0 3px #4b46a8;
+  }
+  a.back-home:hover {
+    background: #61dafb;
+    color: #1e1e2e;
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2.4rem;
+    }
+    article.post h2 {
+      font-size: 1.5rem;
+    }
+    article.post p {
+      font-size: 1rem;
+    }
   }
 </style>
 </head>
@@ -115,61 +137,60 @@
     <a href="blog.html" tabindex="5">開発ブログ</a>
   </nav>
 
-  <main class="content" role="main">
+  <main>
     <h1>開発ブログ</h1>
 
     <article class="post">
-      <h2>Version 1.0.4 - パッチ #1 リリース</h2>
-      <time datetime="2025-07-21">2025年7月21日</time>
+      <h2>1.0.4-pre#20250721 - 新しい背景画像対応、ドキュメント更新</h2>
+      <time datetime="2025-07-21">2025-07-21</time>
       <p>
-        軽微なバグ修正と安定性向上を行いました。パッチは #1 として管理し、細かい修正を迅速に対応。
+        最新リリースで背景画像を刷新し、マニュアルページを整備しました。<br>
+        今後のアップデートに向けた基盤を強化しています。
       </p>
     </article>
 
     <article class="post">
-      <h2>Version 1.0.4 - Beta リリース</h2>
-      <time datetime="2025-07-15">2025年7月15日</time>
+      <h2>1.0.3-final - UI改善と機能追加</h2>
+      <time datetime="2025-07-10">2025-07-10</time>
       <p>
-        新機能の追加を固めたβ版。複数の言語対応強化とUIの大幅改善を実施。まだ軽微な不具合が残っていますが動作は安定しています。
+        ユーザーインターフェースを大幅に改善し、マルチタブ機能やファイルエクスプローラーを強化しました。<br>
+        コード補完機能も安定動作に。
       </p>
     </article>
 
     <article class="post">
-      <h2>Version 1.0.4 - Pre リリース</h2>
-      <time datetime="2025-07-10">2025年7月10日</time>
+      <h2>1.0.2-patch#1 - 小規模修正とパフォーマンス向上</h2>
+      <time datetime="2025-07-03">2025-07-03</time>
       <p>
-        機能追加を中心としたプレリリース版。マルチタブとリアルタイム実行が初実装されました。
+        バグ修正を中心に、動作の軽量化と安定性を改善しました。
       </p>
     </article>
 
     <article class="post">
-      <h2>Version 1.0.3 - Final リリース</h2>
-      <time datetime="2025-06-30">2025年6月30日</time>
+      <h2>1.0.1-final - バグ修正と安定化</h2>
+      <time datetime="2025-06-25">2025-06-25</time>
       <p>
-        ベータ版の修正を重ねて、ほぼ完成形のファイナルリリース。UIの細かいバグ修正とパフォーマンス改善。
+        複数の報告されたバグを修正し、動作の安定性を向上させました。
       </p>
     </article>
 
     <article class="post">
-      <h2>Version 1.0.2 - Beta リリース</h2>
-      <time datetime="2025-06-20">2025年6月20日</time>
+      <h2>1.0.0-beta - 新機能追加と動作確認</h2>
+      <time datetime="2025-06-10">2025-06-10</time>
       <p>
-        新機能追加と初期のバグ修正。動作は安定しており、今後のアップデートに向けた基盤ができました。
+        初期のベータ版リリース。基本機能の追加と動作テストを行いました。
       </p>
     </article>
 
     <article class="post">
-      <h2>Version 1.0.1 - Pre リリース</h2>
-      <time datetime="2025-06-10">2025年6月10日</time>
+      <h2>1.0.0-pre - 最初のプレリリース</h2>
+      <time datetime="2025-06-01">2025-06-01</time>
       <p>
-        初期プレリリース版。基本的なコード編集機能が利用可能。今後の拡張に備えた最初の一歩。
+        Codevプロジェクト開始、基本的なエディター機能を実装しました。
       </p>
     </article>
 
+    <a href="index.html" class="back-home">ホームに戻る</a>
   </main>
-
-  <footer>
-    &copy; NovaWorks
-  </footer>
 </body>
 </html>
