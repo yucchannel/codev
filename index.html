@@ -28,39 +28,21 @@
     left: 0;
     z-index: 10;
   }
-  header h1 {
-    margin: 0;
-    font-size: 1.6rem;
-    color: #61dafb;
-  }
-  nav a {
-    color: #add8e6;
-    text-decoration: none;
-    margin-left: 15px;
-    font-weight: 600;
-    font-size: 1rem;
-  }
-  nav a:hover {
-    color: #ffffff;
-  }
+  header h1 {margin: 0; font-size: 1.6rem; color: #61dafb;}
+  nav a {color: #add8e6; text-decoration: none; margin-left: 15px; font-weight: 600; font-size: 1rem;}
+  nav a:hover {color: #ffffff;}
   main {
     flex: 1;
     padding: 100px 20px 40px;
     max-width: 900px;
     margin: 0 auto;
+    background: rgba(30,30,46,0.8);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
     text-align: center;
   }
-  section {
-    background: rgba(30, 30, 46, 0.8);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 30px;
-    box-shadow: 0 0 10px #0008;
-  }
-  h2 {
-    color: #61dafb;
-    margin-bottom: 15px;
-  }
+  h2 {color: #61dafb; margin-bottom: 15px;}
+  p {line-height: 1.5;}
 </style>
 </head>
 <body>
@@ -74,16 +56,10 @@
 </header>
 
 <main>
-  <section>
-    <h2>Codevとは？</h2>
-    <p>CodevはPython製の軽量かつ高速なコードエディターです。マルチタブ、ファイルエクスプローラー、リアルタイム実行など多機能。</p>
-  </section>
-
-  <section>
-    <h2>最新情報</h2>
-    <p>最新バージョン: <strong>1.0.4-final</strong> - 安定版リリース済み。ダウンロードはGitHubから。</p>
-    <a href="https://github.com/yucchannel/codev/releases/latest" style="color:#61dafb;">Download Latest</a>
-  </section>
+  <h2>Codevとは？</h2>
+  <p>Pythonで作られた軽量かつ高速なコードエディター。マルチタブ、ファイルエクスプローラー、リアルタイム実行など多機能。</p>
+  <p><strong>最新バージョン: 1.0.4-final</strong></p>
+  <a href="https://github.com/yucchannel/codev/releases/latest" style="color:#61dafb;">Download Latest</a>
 </main>
 </body>
 </html>
