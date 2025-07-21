@@ -3,23 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Codev - Lightweight Python Code Editor</title>
+<title>Codev - 軽量Pythonコードエディター</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
-  /* 背景 */
-  body {
-    margin: 0;
-    font-family: 'Montserrat', Arial, sans-serif;
-    background: linear-gradient(135deg, #6a5acdcc 0%, #483d8bcc 100%), url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #e0e0ff;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* 固定メニューバー */
+  /* メニューバー */
   nav.menu-bar {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -54,64 +40,77 @@
     outline: none;
   }
 
-  /* コンテンツ本体 */
-  main.content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 80px; /* メニューのぶん */
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://yucchannel.github.io/codev/Codev.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #eee;
+    position: relative;
+    min-height: 100vh;
+    padding-top: 80px; /* メニューバー用余白 */
     text-align: center;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(106, 90, 205, 0.4);
+    z-index: -1;
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin-top: 40px;
+    color: #add8e6;
+    text-shadow: 0 0 20px #b0c4de;
+  }
+
+  p.lead {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 20px auto 40px;
+    line-height: 1.6;
+  }
+
+  .buttons {
+    margin-bottom: 60px;
+  }
+  a.button {
+    display: inline-block;
+    padding: 14px 28px;
+    margin: 8px;
+    background: #61dafb;
+    color: #1e1e2e;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 6px #2c9ed1aa;
+    transition: background 0.3s ease, color 0.3s ease;
     user-select: none;
   }
-
-  main.content h1 {
-    font-size: 4rem;
-    margin: 0 0 16px;
-    text-shadow: 0 0 15px #9a91ff;
-  }
-  main.content p {
-    max-width: 580px;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    color: #c8c8ffdd;
-    text-shadow: 0 0 6px #7a6ce0cc;
-    margin: 0 auto;
-  }
-
-  /* ボタン群 */
-  .buttons {
-    margin-top: 32px;
-  }
-  .buttons a.button {
-    display: inline-block;
-    background: linear-gradient(135deg, #7c6ff7, #5a4dd9);
-    color: #eee;
-    font-weight: 700;
-    padding: 14px 28px;
-    margin: 0 14px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: 1.15rem;
-    box-shadow: 0 8px 18px -8px #8a80ffcc;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-  }
-  .buttons a.button:hover,
-  .buttons a.button:focus {
-    background: linear-gradient(135deg, #ada6ff, #7f70ff);
-    box-shadow: 0 14px 28px -12px #b6acffcc;
+  a.button:hover,
+  a.button:focus {
+    background: #ffffff;
+    color: #1e1e2e;
+    box-shadow: 0 0 15px #74c0fcaa;
     outline: none;
   }
 
-  /* フッター */
-  footer {
-    text-align: center;
-    padding: 12px 20px;
-    font-size: 0.9rem;
-    color: #bbb;
+  small {
+    color: #aaa;
     user-select: none;
-    text-shadow: 0 0 3px #4b46a8;
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 3rem;
+    }
+    p.lead {
+      font-size: 1.2rem;
+      padding: 0 15px;
+    }
   }
 </style>
 </head>
@@ -124,22 +123,15 @@
     <a href="blog.html" tabindex="5">開発ブログ</a>
   </nav>
 
-  <main class="content" role="main">
-    <h1>Codev</h1>
-    <p>
-      軽量かつモダンなPythonコードエディター。<br>
-      マルチタブ対応、ファイルエクスプローラー、リアルタイム実行機能。<br>
-      ライトモード・ダークモード対応、パフォーマンス2倍向上！
-    </p>
-    <div class="buttons">
-      <a href="https://github.com/yucchannel/codev" class="button" target="_blank" rel="noopener" tabindex="6">GitHub Repository</a>
-      <a href="https://github.com/yucchannel/codev/releases/latest" class="button" target="_blank" rel="noopener" tabindex="7">Download Latest</a>
-      <a href="blog.html" class="button" tabindex="8">Blog</a>
-    </div>
-  </main>
+  <h1>Codev</h1>
+  <p class="lead">軽量かつモダンなPythonコードエディター。<br>マルチタブ編集、ファイルエクスプローラー、リアルタイム実行対応。<br>ライト/ダークモード、2倍高速化も実装済み！</p>
 
-  <footer>
-    &copy; NovaWorks
-  </footer>
+  <div class="buttons">
+    <a href="https://github.com/yucchannel/codev" class="button" target="_blank" rel="noopener">GitHub リポジトリ</a>
+    <a href="https://github.com/yucchannel/codev/releases/latest" class="button" target="_blank" rel="noopener">最新版ダウンロード</a>
+    <a href="blog.html" class="button">開発ブログ</a>
+  </div>
+
+  <small>© NovaWorks</small>
 </body>
 </html>
